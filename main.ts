@@ -36,7 +36,7 @@ function sprite (mySprite: Sprite) {
         ........c333bb333cbbfff.........
         ........c33cc33cc3fff...........
         `, SpriteKind.Player)
-    mySprite.setPosition(46, 65)
+    mySprite.setPosition(50, 65)
     mySprite.sayText("Hello " + userName + "!" + "Try to shoot the tree and get as much points as you can!", 2000, false)
     doneTalking = true
 }
@@ -51,8 +51,7 @@ let doneTalking = false
 let myDart: Dart = null
 let mySprite: Sprite = null
 let userName = ""
-game.splash("Enter your name:")
-userName = game.askForString("")
+userName = game.askForString("Enter your name:")
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
