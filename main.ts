@@ -5,7 +5,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.target, function (sprite, otherSprite) {
-	
+    myDart.stopDart()
 })
 let myDart: Dart = null
 scene.setBackgroundImage(img`
@@ -135,22 +135,22 @@ myDart = darts.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . b . . . . 
-    . . . . . . . . . . . b b . . . 
-    . . . . . . . . . . . b b b . . 
-    . . . . . . . . . . . b b b b . 
-    e e e e e e e e e e e b b b b b 
-    . . . . . . . . . . . b b b b . 
-    . . . . . . . . . . . b b b . . 
-    . . . . . . . . . . . b b . . . 
-    . . . . . . . . . . . b . . . . 
+    . b . . . . . . . . . b . . . . 
+    b . b . . . . . . . . b b . . . 
+    . b . b . . . . . . . b b b . . 
+    b e b e b e e e e e e b b b b . 
+    e e e b e e e e e e e b b b b b 
+    b e b e b e e e e e e b b b b . 
+    . b . b . . . . . . . b b b . . 
+    b . b . . . . . . . . b b . . . 
+    . b . . . . . . . . . b . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-myDart.setTrace()
-myDart.controlWithArrowKeys()
-let target = darts.create(img`
+myDart.setTrace(true)
+myDart.controlWithArrowKeys(true)
+let myTarget = darts.create(img`
     ........................
     ........................
     ..........bbbb..........
@@ -216,4 +216,4 @@ let target = darts.create(img`
     ......cc77cccc67cf......
     ......cc6cccccc6cf......
     `, SpriteKind.target)
-target.sprite.setPosition(150, 50)
+myTarget.sprite.setPosition(150, 50)
