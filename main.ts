@@ -44,6 +44,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.target, function (sprite2, otherSprite) {
+    myDart.stopDart()
     info.changeScoreBy(1)
 })
 let doneTalking = false
