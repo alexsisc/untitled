@@ -36,7 +36,7 @@ function sprite (mySprite: Sprite) {
         ........c333bb333cbbfff.........
         ........c33cc33cc3fff...........
         `, SpriteKind.Player)
-    mySprite.setPosition(50, 65)
+    mySprite.setPosition(50, 75)
     mySprite.sayText("Hello " + userName + "!" + "Try to shoot the tree and get as much points as you can!", 2000, false)
     doneTalking = true
 }
