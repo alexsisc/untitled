@@ -43,10 +43,19 @@ function sprite (mySprite: Sprite) {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
+function winLoose () {
+    pointsReached = 25
+    if (info.score() >= pointsReached) {
+        game.over(true)
+    } else {
+        game.over(false)
+    }
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.target, function (sprite2, otherSprite) {
     myDart.stopDart()
     info.changeScoreBy(1)
 })
+let pointsReached = 0
 let doneTalking = false
 let myDart: Dart = null
 let mySprite: Sprite = null
